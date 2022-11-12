@@ -1,0 +1,12 @@
+ Create Procedure proc(roll_no int)
+    -> BEGIN
+    -> DECLARE
+    -> temp int;
+    -> SELECT attendance into temp from STUD where STUD.Roll_no=roll_no;
+    -> if(temp > 75) then
+    -> insert into message values(roll_no,"Term Granted");
+    -> else
+    -> insert into message values(roll_no,"Term not  Granted");
+    -> end if;
+    -> end
+    -> //
